@@ -13,7 +13,7 @@ const AddLink: React.FC<AddLinkProps> = ({ postId, onLinkAdded }) => {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         axios.post(`http://localhost:3000/posts/${postId}/links`, {
-            link: { link_name: linkName, link_url: linkUrl }
+            link: {link_name: linkName, link_url: linkUrl}
         })
             .then(response => {
                 onLinkAdded();
@@ -46,7 +46,5 @@ const AddLink: React.FC<AddLinkProps> = ({ postId, onLinkAdded }) => {
             </div>
             <button type="submit">Add Link</button>
         </form>
-    );
-};
-
-export default AddLink;
+    )
+}
